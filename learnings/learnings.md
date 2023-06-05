@@ -420,3 +420,6 @@ ex.:
 ```
 call_group("mobs", "queue_free") # it calls queue_free() function on all nodes from a group called “mobs”
 ```
+
+<br>
+<br>
