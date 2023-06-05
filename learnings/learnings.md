@@ -42,6 +42,8 @@ ex. of use cases for scripts:
 
 #### Different types of Nodes:
 
+<br>
+
 ##### Area2D
 
 used to identify when objects enter, exit or overlap a specific 2d area<br>
@@ -54,9 +56,12 @@ ex. of use cases:
 
 used to display text on the screen<br>
 
+<br>
+
 ##### RigidBody2D
 
 used to represent object with physics capabilities (like a ball dropping, force, etc)<br>
+<br>
 
 ##### Panel
 
@@ -77,6 +82,8 @@ the picture is uploaded through the texture section
 <br>
 
 #### GDScript
+
+<br>
 
 ##### extends
 
@@ -164,6 +171,8 @@ ex.:
 
 by default, all scripts already are classes without a name<br>
 
+<br>
+
 ##### how to inherit a unnamed class
 
 ```
@@ -203,10 +212,12 @@ func _ready():
 
 <br>
 
-###### \_init()
+##### \_init()
 
 it's like a constructor<br>
 it's a functio that is automatically called when an instance of a script is created<br>
+
+<br>
 
 ##### signal
 
