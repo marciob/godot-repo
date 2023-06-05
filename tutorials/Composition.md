@@ -8,7 +8,7 @@ In this section, we'll explore how to create reusable, composable components in 
 
 First, let's create a script called `Movement.gd`:<br>
 
-```
+```py
 extends Node2D
 
 export var speed = 100
@@ -21,7 +21,7 @@ Here, the `move` function alters the node's position, mimicking movement.<br>
 
 Now, we can attach this script to any entity that needs movement functionality by creating an instance of it and adding it as a child:
 
-```
+```py
 var movement_component = load("res://path/to/Movement.gd").new()
 add_child(movement_component)
 ```
@@ -30,7 +30,7 @@ Once the `Movement` script is attached as a child, any node can invoke the `move
 
 But what if we need to adjust the movement for specific entities? In that case, we can modify the speed variable for that specific instance of the `Movement` node:
 
-```
+```py
 var movement_component = load("res://path/to/Movement.gd").new()
 movement_component.speed = 200  # Adjust speed for this instance
 add_child(movement_component)
@@ -50,7 +50,7 @@ Signals allow nodes to send notifications to listening entities in your game. In
 
 Let's modify our Movement.gd script to include a signal:
 
-```
+```py
 extends Node2D
 
 export var speed = 100
@@ -65,7 +65,7 @@ In this version, the `move` function emits a `pre_move` signal before updating t
 
 Now, let's say we have a character node called `Player` with an attached `Player.gd` script. We want to double the speed for `Player`'s movement. We can connect to the `pre_move` signal and modify the speed:
 
-```
+```py
 extends Node2D
 
 var movement_component = load("res://path/to/Movement.gd").new()
@@ -90,7 +90,7 @@ Keeping your project directory tidy is crucial for easy navigation, teamwork, an
 
 One common approach is to organize your scripts, scenes, and resources by their function in your game. This might look something like:
 
-```
+```py
 - Scripts/
     - Components/
         - Movement.gd
@@ -113,7 +113,7 @@ In this layout, all scripts relating to specific functionalities are housed unde
 
 Alternatively, you might choose to group your resources by node type:
 
-```
+```py
 - Scripts/
     - CharacterBody2D/
         - Player.gd
@@ -137,7 +137,7 @@ This setup may be more beneficial if your game uses different node types extensi
 
 For larger projects or games with distinct levels or areas, you may find it useful to structure your project according to these divisions:
 
-```
+```py
 - Scripts/
     - Level1/
         - Player.gd
@@ -177,7 +177,7 @@ Imagine a scenario where your game has various characters - they could be heroes
 
 Here's an example of a base "Character" class in Godot:
 
-```
+```py
 # Character.gd
 extends CharacterBody2D
 
@@ -197,7 +197,7 @@ In this base class, we have defined the `health`, `speed`, `move` and `take_dama
 
 We can now create specific character classes, say `Player` and `Enemy`, which inherit from this base class and hence automatically get these common features:
 
-```
+```py
 # Player.gd
 extends "res://Character.gd"
 
@@ -206,7 +206,7 @@ func _process(delta):
     move()
 ```
 
-```
+```py
 # Enemy.gd
 extends "res://Character.gd"
 
@@ -227,7 +227,7 @@ Let's imagine you're building a game with multiple enemies. These enemies might 
 
 Here's a basic example of an "Enemy" scene in Godot:
 
-```
+```py
 # Enemy.gd
 extends CharacterBody2D
 
@@ -248,7 +248,7 @@ In this scene, we have defined the `health`, `speed`, `move`, and `take_damage` 
 
 Now, when we want to create an enemy in a specific level, we can just instantiate the `Enemy` scene:
 
-```
+```py
 # Level.gd
 extends Node2D
 
@@ -261,7 +261,7 @@ Here, the `_ready()` function in the level script loads the `Enemy` scene and cr
 
 This approach not only reduces redundancy but also promotes flexibility. If you want to modify a property for a specific enemy, you can do so without affecting the other instances. For example, if one enemy should have more health, you can adjust the health variable for that specific instance:
 
-```
+```py
 # Level.gd
 extends Node2D
 
@@ -287,7 +287,7 @@ Let's take a detailed look at the process of refactoring the movement code:
 
 First, we identify the common functionalities. In our case, it's the movement function which probably looks something like this in all character scripts:
 
-```
+```py
 func _process(delta):
     var direction = Vector2(0, 0)
     if Input.is_action_pressed('ui_right'):
@@ -305,7 +305,7 @@ func _process(delta):
 
 Now, we extract this movement code into a standalone script named 'Movement.gd':
 
-```
+```py
 extends Node2D
 
 var speed = 200
@@ -329,7 +329,7 @@ This script creates a `Movement` node which moves according to player input.
 
 We can now replace the movement code in each character's script with an instance of our new 'Movement' node. For instance, in the Player script, it would look like:
 
-```
+```py
 extends Node2D
 
 onready var movement = preload("res://path_to_your_script/Movement.gd").new()
