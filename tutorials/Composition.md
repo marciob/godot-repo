@@ -57,7 +57,7 @@ export var speed = 100
 signal pre_move
 
 func move(delta):
-    emit_signal("pre_move", self)
+    emit("pre_move", self)
     position += Vector2(speed, 0) * delta
 ```
 
@@ -115,13 +115,13 @@ Alternatively, you might choose to group your resources by node type:
 
 ```
 - Scripts/
-    - KinematicBody2D/
+    - CharacterBody2D/
         - Player.gd
         - Enemy.gd
     - Area2D/
         - Powerup.gd
 - Scenes/
-    - KinematicBody2D/
+    - CharacterBody2D/
         - Player.tscn
         - Enemy.tscn
     - Area2D/
@@ -179,7 +179,7 @@ Here's an example of a base "Character" class in Godot:
 
 ```
 # Character.gd
-extends KinematicBody2D
+extends CharacterBody2D
 
 var health = 100
 var speed = 200
@@ -229,7 +229,7 @@ Here's a basic example of an "Enemy" scene in Godot:
 
 ```
 # Enemy.gd
-extends KinematicBody2D
+extends CharacterBody2D
 
 var health = 100
 var speed = 200
