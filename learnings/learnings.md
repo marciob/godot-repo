@@ -433,4 +433,17 @@ call_group("mobs", "queue_free") # it calls queue_free() function on all nodes f
 ```
 
 <br>
+
+#### Node2D
+
+base class for organizing and transforming 2D objects.<br>
+
+#### CharacterBody2D
+
+used for implementing controlled movement and physics interactions of 2D objects<br>
+it’s a sub class of Node2D<br>
+ex. of usecases:<br>
+`precise movement controls, collision handling, physics-based interactions`
+
+<br>
 <br>
