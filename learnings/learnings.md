@@ -343,7 +343,7 @@ var my_node = $MyNode
 
 ##### @onready
 
-used to initiliaze references to other nodes for using before \_ready() is called
+used to initiliaze references to other nodes for using before \_ready() is called<br>
 ex.:
 
 ```py
