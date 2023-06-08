@@ -91,7 +91,7 @@ it's how to inherit a file or class<br>
 only 1 class can be extended within the same script<br>
 ex.:
 
-```
+```py
 extends BaseClassFile
 extends CharacterBody2D
 ```
@@ -105,7 +105,7 @@ usually they are methods predefined in global nodes and you override them to add
 there is a naming convetion to start with \_ on the virtual method name<br>
 ex.:
 
-```
+```py
 	_ready():
 		print("Node is ready!")
 ```
@@ -117,7 +117,7 @@ ex.:
 keyword to represent empty code<br>
 ex.:
 
-```
+```py
 	_ready():
 		pass # used to avoid complaing about the function being empty
 ```
@@ -129,7 +129,7 @@ ex.:
 a type can be specied for a variable, so if assigning a different type it will give an error<br>
 ex.:
 
-```
+```py
 	var my_variable: Node = Sprite.new() # variable of the type Node
 	var my_another_varialbe := Sprite.new() # 'my_another_varialbe' is of type 'Sprite’, the type was ommited but the type can be inferred
 ```
@@ -142,7 +142,7 @@ virtual method called automatically when nodes (and its children) are loaded int
 it's often used to initialize variables, connect signals, or setup parts of the node that depend on other nodes<br>
 ex.:
 
-```
+```py
 	func _ready():
 		var random = RandomNumberGenerator.new()
 		random.randomize()
@@ -159,7 +159,7 @@ delta argument is the time (in seconds) since the last frame<br>
 it can be used for moving an object, checking conditions, etc<br>
 ex.:
 
-```
+```py
 	var counter = 0
 	func _process(delta):
 		counter += 1  # increases the counter by 1 every frame
@@ -175,7 +175,7 @@ by default, all scripts already are classes without a name<br>
 
 ##### how to inherit a unnamed class
 
-```
+```py
 extends res://path/to/character.gd
 
 var Character = load("res://path/to/character.gd") # loads character.gd
@@ -189,7 +189,7 @@ var character_node = Character.new() # create a new node instance from it
 a named class becomes globally available in all other GDScript files and doesn’t need to be imported into a new script<br>
 inside the node that we wanna give a class name, we use class_name, like that example:<br>
 
-```
+```py
 # Inside Character.gd script
 class_name Character
 # optionally you can give an icon image for that, like that:
@@ -203,7 +203,7 @@ func talk():
 
 now that script is already named and we can inherit it into another script, like that:<br>
 
-```
+```py
 # Inside another GDScript file
 func _ready():
     var my_character = Character.new()
@@ -231,7 +231,7 @@ ex. of use cases fo signals:
 
 ##### ex. of creating a signal:
 
-```
+```py
 signal my_signal # defines the signal
 
 func my_function():
@@ -243,7 +243,7 @@ func my_function():
 
 ##### ex. of using the signal into another script:
 
-```
+```py
 func _ready():
     # connecting the signal
     # in this case when the signal happens it calls _on_my_signal() function
@@ -257,7 +257,7 @@ func _on_my_signal():
 
 ##### ex. of signals with arguments:
 
-```
+```py
 signal health_changed(old_value, new_value)
 
 var health = 10
@@ -290,7 +290,7 @@ it's a built-in function used to link a signal with a function<br>
 when the signal happens the linked function will be automatically called<br>
 ex.:
 
-```
+```py
 var button = get_node("Button")  # example instantiating a Button node
 button.connect("pressed", Callable(self, "_on_Button_pressed"))  # connecting the button's "pressed" signal to our own function
 ```
@@ -304,7 +304,7 @@ it throw an error if the node doesn't exist<br>
 you can use `has_node()` to check if the node exist<br>
 ex.:
 
-```
+```py
 if has_node("Player"):
 	var player = get_node("Player")
 ```
@@ -316,7 +316,7 @@ it's the same thing as using $
 
 ##### ex. of using get_node():
 
-```
+```py
 var player = get_node("Player") # getting a node named Player that is a direct child of the current node
 var health_bar = get_node("../UserInterface/HealthBar") # getting a node that’s one level up and children fo a UserInterface node
 ```
@@ -328,15 +328,27 @@ var health_bar = get_node("../UserInterface/HealthBar") # getting a node that’
 it's used to access another node in your scene, just like get_node()<br>
 ex.:
 
-```
+```py
 var my_node = $MyNode
 ```
 
 those have the same effect:<br>
 
-```
+```py
 var my_node = get_node("MyNode")
 var my_node = $MyNode
+```
+
+<br>
+
+##### @onready
+
+used to initiliaze references to other nodes for using before \_ready() is called
+ex.:
+
+```py
+onready var sprite = $Sprite # initiliazes the $Sprite node
+onready var sound = preload("res://sound/sound_effect.wav") # initializes a file
 ```
 
 <br>
@@ -365,7 +377,7 @@ if visible is set to true, the node and its children will be visible in the game
 if visible is set to false, the node and its children will not be rendered in the game<br>
 ex.:
 
-```
+```py
 var character = get_node("CharacterSprite")
 character.visible = false
 ```
@@ -377,7 +389,7 @@ character.visible = false
 key word used to exposed variables to the inspector section in the editor<br>
 ex.:
 
-```
+```py
 @export var speed = 400
 ```
 
@@ -393,7 +405,7 @@ it takes 3 arguments:
 - the maximum value
   ex.:
 
-```
+```py
 position.x = clamp(position.x, 0, screen_size.x) # clamping a position.x to be only until the screen maximum size
 ```
 
@@ -428,7 +440,7 @@ a way to organize and categorize nodes, allowing operations to be performed on m
 it calls a function on every node in a group<br>
 ex.:
 
-```
+```py
 call_group("mobs", "queue_free") # it calls queue_free() function on all nodes from a group called “mobs”
 ```
 
