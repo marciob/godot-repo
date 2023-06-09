@@ -295,6 +295,12 @@ var button = get_node("Button")  # example instantiating a Button node
 button.connect("pressed", Callable(self, "_on_Button_pressed"))  # connecting the button's "pressed" signal to our own function
 ```
 
+in previous Godot version it was used like that (without the Callable() function)):
+
+```py
+button.connect("pressed", self, "_on_Button_pressed")
+```
+
 <br>
 
 ##### get_node()
