@@ -239,6 +239,12 @@ func my_function():
     my_signal.emit() # my_signal is emitted when that function is called
 ```
 
+in previous Godot version it was used like that (with emit_signal function instead of simple emit()):
+
+```py
+emit_signal("signal_name")
+```
+
 <br>
 
 ##### ex. of using the signal into another script:
