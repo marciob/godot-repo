@@ -382,6 +382,11 @@ allows to enable or disable the processing of a node, specifically the `_process
 
 checks if `_process(delta)` is set to run or not<br>
 
+##### is_instance_valid
+
+checks if a node instance still is valid. <br>
+it's useful to check if a node was deleted or not. <br>
+
 ##### visible
 
 it’s a property present in some nodes, that determines the visibility of the node<br>
