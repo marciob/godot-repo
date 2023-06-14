@@ -365,6 +365,34 @@ onready var sound = preload("res://sound/sound_effect.wav") # initializes a file
 
 <br>
 
+instantiating an object<br>
+`.new()`
+<br>
+used when you create an instance of the class dynamically through code<br>
+this is not linked to any specific node in the scene tree until you add it as a child to a node<br>
+
+ex.:
+
+```py
+var movement = Movement.new()
+```
+
+<br>
+
+obtaining a reference to an existing node <br>
+`$NodeName` <br>
+it’s getting a reference to an existing NodeName node that is a child of the current node<br>
+$ is a shorthand in GDScript for accessing a child node of the current node
+it’s equivalent to get_node(“NodeName”) <br>
+
+ex.:
+
+```py
+@onready var movement = $Movement
+```
+
+<br>
+
 ##### \_unhandled_input()
 
 built-in function for event listeners for input events that haven’t been handled by other functions<br>
