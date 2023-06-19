@@ -534,4 +534,29 @@ ex. of use cases:<br>
 in-game menus, health bars, mini-maps, etc<br>
 
 <br>
+
+##### Tilemap
+
+it's a node for creating grid-based layout of tiles (azulejos, in portuguese)<br>
+the collision is set not directly in the Tilemap, but in the tileset which is within the tilemap<br>
+
+<br>
+
+##### Tileset
+
+it's a collection of tiles that can be used in a TileMap<br>
+it's not a node, it's a resource that can be found within a TileMap node:<br>
+
+![Alt text](image-1.png)
+
+<br>
+
+##### Sprite Sheet (or Tilesheet)
+
+it's a single image that contains multiple smaller images (sprites)<br>
+ex.:
+
+![Alt text](image.png)
+
+<br>
 <br>

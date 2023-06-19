@@ -1,12 +1,8 @@
-# 2D sprite animation assets
-
-Used by the "2D sprite animation" tutorial: <br>
+# Godot 4 2D Animation Tutorial
 
 https://docs.godotengine.org/en/latest/tutorials/2d/2d_sprite_animation.html
 
-## Godot 4 2D Animation Tutorial
-
-This project showcases three different ways of creating 2D animations in Godot 4 using either individual images or sprite sheets. <br>
+This tutorial showcases three different ways of creating 2D animations in Godot 4 using either individual images or sprite sheets. <br>
 
 ## Individual Images with AnimatedSprite2D
 
