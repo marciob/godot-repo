@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://hjrq7nigxp5v"]
+
+[ext_resource type="Texture2D" uid="uid://dhj4pldmmuhhw" path="res://art/2d_animation_frog_spritesheet.png" id="1_0o7rw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72jp1"]
+atlas = ExtResource("1_0o7rw")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1dvc"]
+atlas = ExtResource("1_0o7rw")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lroi"]
+atlas = ExtResource("1_0o7rw")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vl4g"]
+atlas = ExtResource("1_0o7rw")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a7oj"]
+atlas = ExtResource("1_0o7rw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65kqq"]
+atlas = ExtResource("1_0o7rw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37opp"]
+atlas = ExtResource("1_0o7rw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84bqb"]
+atlas = ExtResource("1_0o7rw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrfdg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72jp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1dvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lroi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vl4g")
+}],
+"loop": true,
+"name": &"blinking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a7oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65kqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37opp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84bqb")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lkatj"]
+radius = 4.0
+
+[node name="Frog" type="CharacterBody2D"]
+position = Vector2(146, 95)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qrfdg")
+animation = &"jump"
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 9)
+shape = SubResource("CircleShape2D_lkatj")
