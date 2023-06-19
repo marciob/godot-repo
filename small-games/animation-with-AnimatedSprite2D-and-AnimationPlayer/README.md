@@ -14,7 +14,7 @@ This method involves having a collection of separated images, each containing on
 
 These images are added directly to an AnimatedSprite2D node, which controls the frame rate and sequence of the animation. The animation can be played and stopped by using the play() and stop() methods in the script. <br>
 
-(image.png)
+(https://github.com/marciob/godot-repo/blob/main/small-games/animation-with-AnimatedSprite2D-and-AnimationPlayer/image.png)
 <br>
 
 ## Sprite Sheet with AnimatedSprite2D
@@ -25,11 +25,11 @@ The sprite sheet is added to an AnimatedSprite2D node, and the frames are select
 
 This way, you can animate your character by sequencing through the frames in the sprite sheet, just as with individual images. <br>
 
-(image-1.png)
+(https://github.com/marciob/godot-repo/blob/main/small-games/animation-with-AnimatedSprite2D-and-AnimationPlayer/image-1.png)
 
 ## Sprite Sheet with AnimationPlayer
 
 The third method is more complex and it involves using an AnimationPlayer node to animate a sprite sheet. <br>
 
 Instead of using an AnimatedSprite2D node, you use a standard Sprite2D node to display the sprite sheet, and then animate the change from frame to frame using the AnimationPlayer. This method provides more control over the timing and sequencing of the animation frames. <br>
-(image-2.png)
+(https://github.com/marciob/godot-repo/blob/main/small-games/animation-with-AnimatedSprite2D-and-AnimationPlayer/image-2.png)
