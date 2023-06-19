@@ -52,25 +52,6 @@ ex. of use cases:
 
 <br>
 
-##### Label
-
-used to display text on the screen<br>
-
-<br>
-
-##### RigidBody2D
-
-used to represent object with physics capabilities (like a ball dropping, force, etc)<br>
-<br>
-
-##### Panel
-
-container for grouping UI elements like labels, buttons, etc<br>
-ex. of use cases:
-`game menu, inventory screen, dialogue box`
-
-<br>
-
 ##### Sprite2D
 
 used to display 2d images or sprites<br>
@@ -493,14 +474,64 @@ call_group("mobs", "queue_free") # it calls queue_free() function on all nodes f
 
 #### Node2D
 
-base class for organizing and transforming 2D objects.<br>
+base class for organizing and transforming 2D objects. <br>
+it provides basic properties such as position, rotation, and scale <br>
+it doesn't provide complex physics interactions, like collision detection<br>
+ex. of use cases:<br>
+static elements in your game that don't move, elements that move in simple ways (like moving in a straight line or rotating around a point)<br>
 
 #### CharacterBody2D
 
 used for implementing controlled movement and physics interactions of 2D objects<br>
 it’s a sub class of Node2D<br>
+it provides various methods to handle movement, including collision detection and response<br>
 ex. of usecases:<br>
 `precise movement controls, collision handling, physics-based interactions`
+
+<br>
+
+##### RigidBody2D
+
+it's used to represent a 2D body that is affected by physics.<br>
+use cases ex.: <br>
+like a ball dropping, force, etc.<br>
+<br>
+
+#### Control
+
+base class for UI elements like buttons, sliders, labels, panels, etc. <br>
+
+<br>
+
+##### Panel
+
+container for grouping UI elements like labels, buttons, etc<br>
+ex. of use cases:
+`game menu, inventory screen, dialogue box`
+
+<br>
+
+##### Label
+
+used to display text on the screen<br>
+
+<br>
+
+##### Viewport
+
+it's a display container used to render a portion of the game world<br>
+it's used to create split-screen games, mini-maps, etc<br>
+it's similar concept to containers in HTML<br>
+
+<br>
+
+##### CanvasLayer
+
+it's a unique layer that independently controls how its child nodes are rendered (how they are drawn, transformed, etc) <br>
+used to control the rendering order of 2D elements<br>
+it's often used to make sure that menus are always visible on top of the game view<br>
+ex. of use cases:<br>
+in-game menus, health bars, mini-maps, etc<br>
 
 <br>
 <br>
