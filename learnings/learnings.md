@@ -559,4 +559,17 @@ ex.:
 ![Alt text](image.png)
 
 <br>
+
+##### Atlas
+
+it's a collection of images combined in a single larger image<br>
+the images there can be of different sizes and not need to be related to each other<br>
+
+<br>
+
+##### GPUParticles2D
+
+Node that helps create cool visual effects like sparks, fire, and smoke in games using the computer's graphics processor for fast and efficient processing.<br>
+
+<br>
 <br>
